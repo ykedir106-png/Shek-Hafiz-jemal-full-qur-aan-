@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="om">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#075b3a">
+<meta name="description" content="Qur'aana Qulqulluu sagalee Qari'ii Hafiz Jemal waliin.">
+
+<title>Qur'aana Qari'ii Hafiz Jemal</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+:root{
+  --green:#075b3a;
+  --green2:#0b8050;
+  --gold:#e9bd45;
+  --bg:#f4f8f6;
+  --card:#ffffff;
+  --text:#17352a;
+  --muted:#687a72;
+  --border:#dce8e2;
+}
+
+body{
+  font-family:
+    Arial,
+    "Noto Sans Arabic",
+    sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  transition:.25s;
+}
+
+body.dark{
+  --bg:#0e1713;
+  --card:#17221c;
+  --text:#f1f6f3;
+  --muted:#aebcb5;
+  --border:#2d3c34;
+}
+
+button,
+input{
+  font-family:inherit;
+}
+
+button{
+  border:0;
+  cursor:pointer;
+}
+
+/* HEADER */
+
+header{
+  background:
+    linear-gradient(
+      135deg,
+      var(--green),
+      var(--green2)
+    );
+  color:white;
+  padding:22px 15px;
+  text-align:center;
+  box-shadow:0 4px 18px rgba(0,0,0,.18);
+}
+
+.logo{
+  font-size:31px;
+  margin-bottom:6px;
+}
+
+.subtitle{
+  font-size:14px;
+  opacity:.92;
+}
+
+.header-actions{
+  max-width:950px;
+  margin:15px auto 0;
+  display:flex;
+  justify-content:flex-end;
+}
+
+.theme-btn{
+  background:rgba(255,255,255,.16);
+  color:white;
+  padding:9px 15px;
+  border-radius:25px;
+  font-size:14px;
+}
+
+/* MAIN */
+
+main{
+  width:94%;
+  max-width:950px;
+  margin:25px auto 100px;
+}
+
+/* WELCOME */
+
+.welcome{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.welcome h2{
+  color:var(--green);
+  margin-bottom:8px;
+}
+
+body.dark .welcome h2{
+  color:#68d59e;
+}
+
+.welcome p{
+  color:var(--muted);
+}
+
+/* PLAYER */
+
+.player{
+  background:var(--card);
+  border-radius:24px;
+  padding:25px 20px;
+  box-shadow:0 8px 30px rgba(0,0,0,.08);
+  margin-bottom:25px;
+}
+
+.qari{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.qari-icon{
+  width:78px;
+  height:78px;
+  border-radius:50%;
+  margin:auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:36px;
+
+  background:#e5f3eb;
+}
+
+body.dark .qari-icon{
+  background:#26382e;
+}
+
+.qari h3{
+  margin-top:10px;
+  font-size:21px;
+}
+
+.qari p{
+  color:var(--muted);
+  margin-top:5px;
+}
+
+/* CURRENT SURAH */
+
+.current{
+  text-align:center;
+  background:#eff8f3;
+  border-radius:18px;
+  padding:18px;
+  margin-bottom:18px;
+}
+
+body.dark .current{
+  background:#203028;
+}
+
+.current h2{
+  color:var(--green);
+  font-size:24px;
+}
+
+body.dark .current h2{
+  color:#70d8a3;
+}
+
+.current .arabic{
+  font-size:27px;
+  margin-top:7px;
+  direction:rtl;
+}
+
+.current p{
+  color:var(--muted);
+  margin-top:7px;
+  font-size:13px;
+}
+
+/* AUDIO */
+
+audio{
+  width:100%;
+  margin:8px 0 18px;
+}
+
+/* CONTROLS */
+
+.controls{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+}
+
+.control{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+
+  background:#e7f3ed;
+  color:var(--green);
+
+  font-size:20px;
+}
+
+body.dark .control{
+  background:#293b32;
+  color:#73d6a4;
+}
+
+.control:hover{
+  transform:scale(1.04);
+}
+
+.play{
+  width:65px;
+  height:65px;
+  background:var(--green);
+  color:white;
+  font-size:26px;
+}
+
+.play:hover{
+  background:var(--green2);
+}
+
+/* VOLUME */
+
+.volume{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:20px;
+}
+
+.volume input{
+  width:100%;
+  accent-color:var(--green);
+}
+
+/* STATUS */
+
+.status{
+  text-align:center;
+  min-height:20px;
+  margin-top:12px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* SURAHS */
+
+.surahs{
+  background:var(--card);
+  padding:20px;
+  border-radius:24px;
+  box-shadow:0 8px 30px rgba(0,0,0,.08);
+}
+
+.surahs h2{
+  color:var(--green);
+  margin-bottom:15px;
+}
+
+body.dark .surahs h2{
+  color:#70d8a3;
+}
+
+/* SEARCH */
+
+.search{
+  width:100%;
+  padding:14px 16px;
+
+  border:1px solid var(--border);
+  border-radius:13px;
+
+  background:var(--bg);
+  color:var(--text);
+
+  outline:none;
+  font-size:15px;
+
+  margin-bottom:15px;
+}
+
+.search:focus{
+  border-color:var(--green);
+}
+
+/* SURAH ITEM */
+
+.surah{
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  padding:13px 7px;
+
+  border-bottom:1px solid var(--border);
+
+  transition:.2s;
+}
+
+.surah:last-child{
+  border-bottom:0;
+}
+
+.surah:hover{
+  background:rgba(7,91,58,.06);
+}
+
+.number{
+  width:38px;
+  height:38px;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:#e7f3ed;
+  color:var(--green);
+
+  font-weight:bold;
+  flex-shrink:0;
+}
+
+body.dark .number{
+  background:#293b32;
+  color:#70d8a3;
+}
+
+.surah-info{
+  flex:1;
+  min-width:0;
+}
+
+.surah-info strong{
+  display:block;
+  font-size:15px;
+}
+
+.surah-info small{
+  display:block;
+  color:var(--muted);
+  margin-top:4px;
+}
+
+.arabic-name{
+  font-size:20px;
+  direction:rtl;
+  margin-left:5px;
+  white-space:nowrap;
+}
+
+.surah-play{
+  width:42px;
+  height:42px;
+
+  border-radius:50%;
+
+  background:var(--green);
+  color:white;
+
+  font-size:16px;
+
+  flex-shrink:0;
+}
+
+.surah-play:hover{
+  background:var(--green2);
+}
+
+/* NO RESULT */
+
+.no-result{
+  text-align:center;
+  padding:25px;
+  color:var(--muted);
+}
+
+/* FOOTER */
+
+footer{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+
+  background:var(--green);
+  color:white;
+
+  text-align:center;
+  padding:12px 8px;
+
+  font-size:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+  .logo{
+    font-size:24px;
+  }
+
+  main{
+    width:95%;
+  }
+
+  .player{
+    padding:20px 14px;
+  }
+
+  .current h2{
+    font-size:20px;
+  }
+
+  .current .arabic{
+    font-size:24px;
+  }
+
+  .controls{
+    gap:8px;
+  }
+
+  .control{
+    width:47px;
+    height:47px;
+  }
+
+  .play{
+    width:59px;
+    height:59px;
+  }
+
+  .arabic-name{
+    font-size:17px;
+  }
+
+  .surah-info strong{
+    font-size:14px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+  <div class="logo">
+    📖 Qur'aana Qari'ii Hafiz Jemal
+  </div>
+
+  <div class="subtitle">
+    القرآن الكريم — تلاوة الشيخ حافظ جمال
+  </div>
+
+  <div class="header-actions">
+
+    <button
+      class="theme-btn"
+      onclick="toggleDark()">
+
+      🌙 Dark Mode
+
+    </button>
+
+  </div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- WELCOME -->
+
+<section class="welcome">
+
+  <h2>Baga Nagaan Dhuftan</h2>
+
+  <p>
+    Qur'aana Qulqulluu sagalee Qari'ii Hafiz Jemal waliin dhaggeeffadhaa.
+  </p>
+
+</section>
+
+
+
+<!-- PLAYER -->
+
+<section class="player">
+
+
+  <div class="qari">
+
+    <div class="qari-icon">
+      🎙️
+    </div>
+
+    <h3>Hafiz Jemal</h3>
+
+    <p>Qari'ii Qur'aanaa</p>
+
+  </div>
+
+
+
+  <div class="current">
+
+    <h2 id="currentName">
+      Suuraa Al-Ahzaab
+    </h2>
+
+    <div
+      class="arabic"
+      id="currentArabic">
+
+      الأحزاب
+
+    </div>
+
+    <p id="currentNumber">
+      Suuraa 33
+    </p>
+
+  </div>
+
+
+
+  <audio
+    id="audio"
+    controls
+    preload="metadata">
+
+    <source
+      src="audio/Stratus%20azaab.m4a"
+      type="audio/mp4">
+
+    Browser kee audio kana taphachuu hin danda'u.
+
+  </audio>
+
+
+
+  <div class="controls">
+
+    <button
+      class="control"
+      onclick="previousSurah()"
+      title="Suuraa darbe">
+
+      ⏮
+
+    </button>
+
+
+    <button
+      class="control play"
+      id="playButton"
+      onclick="togglePlay()"
+      title="Play / Pause">
+
+      ▶
+
+    </button>
+
+
+    <button
+      class="control"
+      onclick="nextSurah()"
+      title="Suuraa itti aanu">
+
+      ⏭
+
+    </button>
+
+  </div>
+
+
+
+  <div class="volume">
+
+    <span>🔊</span>
+
+    <input
+      id="volume"
+      type="range"
+      min="0"
+      max="1"
+      step="0.01"
+      value="1">
+
+  </div>
+
+
+
+  <div
+    class="status"
+    id="status">
+
+    Suuraa Al-Ahzaab — Sagalee Hafiz Jemal
+
+  </div>
+
+</section>
+
+
+
+<!-- SURAH LIST -->
+
+<section class="surahs">
+
+  <h2>
+    📚 Suurawwan Qur'aanaa
+  </h2>
+
+
+  <input
+    id="search"
+    class="search"
+    type="search"
+    placeholder="🔎 Maqaa ykn lakkoofsa Suuraa barbaadi...">
+
+
+  <div id="surahList"></div>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+  Qur'aana Qari'ii Hafiz Jemal © 2026
+
+</footer>
+
+
+
+<script>
+
+
+/*
+====================================================
+QUR'AAN SURAH DATA — 114
+====================================================
+*/
+
+const surahs = [
+
+  [1,"الفاتحة","Al-Faatihah","The Opening"],
+  [2,"البقرة","Al-Baqarah","The Cow"],
+  [3,"آل عمران","Aali Imraan","Family of Imran"],
+  [4,"النساء","An-Nisaa","The Women"],
+  [5,"المائدة","Al-Maa'idah","The Table Spread"],
+  [6,"الأنعام","Al-An'aam","The Cattle"],
+  [7,"الأعراف","Al-A'raaf","The Heights"],
+  [8,"الأنفال","Al-Anfaal","The Spoils of War"],
+  [9,"التوبة","At-Tawbah","The Repentance"],
+  [10,"يونس","Yuunus","Jonah"],
+  [11,"هود","Huud","Hud"],
+  [12,"يوسف","Yuusuf","Joseph"],
+  [13,"الرعد","Ar-Ra'd","The Thunder"],
+  [14,"إبراهيم","Ibraahiim","Abraham"],
+  [15,"الحجر","Al-Hijr","The Rocky Tract"],
+  [16,"النحل","An-Nahl","The Bee"],
+  [17,"الإسراء","Al-Israa","The Night Journey"],
+  [18,"الكهف","Al-Kahf","The Cave"],
+  [19,"مريم","Maryam","Mary"],
+  [20,"طه","Taa-Haa","Ta-Ha"],
+  [21,"الأنبياء","Al-Anbiyaa","The Prophets"],
+  [22,"الحج","Al-Hajj","The Pilgrimage"],
+  [23,"المؤمنون","Al-Mu'minuun","The Believers"],
+  [24,"النور","An-Nuur","The Light"],
+  [25,"الفرقان","Al-Furqaan","The Criterion"],
+  [26,"الشعراء","Ash-Shu'araa","The Poets"],
+  [27,"النمل","An-Naml","The Ant"],
+  [28,"القصص","Al-Qasas","The Stories"],
+  [29,"العنكبوت","Al-Ankabuut","The Spider"],
+  [30,"الروم","Ar-Ruum","The Romans"],
+  [31,"لقمان","Luqmaan","Luqman"],
+  [32,"السجدة","As-Sajdah","The Prostration"],
+  [33,"الأحزاب","Al-Ahzaab","The Confederates"],
+  [34,"سبأ","Saba","Sheba"],
+  [35,"فاطر","Faatir","Originator"],
+  [36,"يس","Yaa-Siin","Ya-Sin"],
+  [37,"الصافات","As-Saaffaat","Those Ranges in Ranks"],
+  [38,"ص","Saad","Saad"],
+  [39,"الزمر","Az-Zumar","The Groups"],
+  [40,"غافر","Ghaafir","The Forgiver"],
+  [41,"فصلت","Fussilat","Explained in Detail"],
+  [42,"الشورى","Ash-Shuuraa","Consultation"],
+  [43,"الزخرف","Az-Zukhruf","The Gold Adornments"],
+  [44,"الدخان","Ad-Dukhaan","The Smoke"],
+  [45,"الجاثية","Al-Jaathiyah","The Crouching"],
+  [46,"الأحقاف","Al-Ahqaaf","The Wind-Curved Sandhills"],
+  [47,"محمد","Muhammad","Muhammad"],
+  [48,"الفتح","Al-Fath","The Victory"],
+  [49,"الحجرات","Al-Hujuraat","The Rooms"],
+  [50,"ق","Qaaf","Qaaf"],
+  [51,"الذاريات","Adh-Dhaariyaat","The Winnowing Winds"],
+  [52,"الطور","At-Tuur","The Mount"],
+  [53,"النجم","An-Najm","The Star"],
+  [54,"القمر","Al-Qamar","The Moon"],
+  [55,"الرحمن","Ar-Rahmaan","The Beneficent"],
+  [56,"الواقعة","Al-Waaqi'ah","The Inevitable"],
+  [57,"الحديد","Al-Hadiid","The Iron"],
+  [58,"المجادلة","Al-Mujaadilah","The Pleading Woman"],
+  [59,"الحشر","Al-Hashr","The Exile"],
+  [60,"الممتحنة","Al-Mumtahanah","She That Is To Be Examined"],
+  [61,"الصف","As-Saff","The Ranks"],
+  [62,"الجمعة","Al-Jumu'ah","Friday"],
+  [63,"المنافقون","Al-Munaafiquun","The Hypocrites"],
+  [64,"التغابن","At-Taghaabun","Mutual Disillusion"],
+  [65,"الطلاق","At-Talaaq","The Divorce"],
+  [66,"التحريم","At-Tahriim","The Prohibition"],
+  [67,"الملك","Al-Mulk","The Sovereignty"],
+  [68,"القلم","Al-Qalam","The Pen"],
+  [69,"الحاقة","Al-Haaqqah","The Reality"],
+  [70,"المعارج","Al-Ma'aarij","The Ascending Stairways"],
+  [71,"نوح","Nuuh","Noah"],
+  [72,"الجن","Al-Jinn","The Jinn"],
+  [73,"المزمل","Al-Muzzammil","The Enshrouded One"],
+  [74,"المدثر","Al-Muddaththir","The Cloaked One"],
+  [75,"القيامة","Al-Qiyaamah","The Resurrection"],
+  [76,"الإنسان","Al-Insaan","Man"],
+  [77,"المرسلات","Al-Mursalaat","The Emissaries"],
+  [78,"النبأ","An-Naba","The Tidings"],
+  [79,"النازعات","An-Naazi'aat","Those Who Drag Forth"],
+  [80,"عبس","Abasa","He Frowned"],
+  [81,"التكوير","At-Takwiir","The Overthrowing"],
+  [82,"الانفطار","Al-Infitaar","The Cleaving"],
+  [83,"المطففين","Al-Mutaffifiin","The Defrauding"],
+  [84,"الانشقاق","Al-Inshiqaaq","The Sundering"],
+  [85,"البروج","Al-Buruuj","The Mansions of the Stars"],
+  [86,"الطارق","At-Taariq","The Nightcomer"],
+  [87,"الأعلى","Al-A'laa","The Most High"],
+  [88,"الغاشية","Al-Ghaashiyah","The Overwhelming"],
+  [89,"الفجر","Al-Fajr","The Dawn"],
+  [90,"البلد","Al-Balad","The City"],
+  [91,"الشمس","Ash-Shams","The Sun"],
+  [92,"الليل","Al-Layl","The Night"],
+  [93,"الضحى","Ad-Duhaa","The Morning Brightness"],
+  [94,"الشرح","Ash-Sharh","The Relief"],
+  [95,"التين","At-Tiin","The Fig"],
+  [96,"العلق","Al-Alaq","The Clot"],
+  [97,"القدر","Al-Qadr","The Power"],
+  [98,"البينة","Al-Bayyinah","The Clear Proof"],
+  [99,"الزلزلة","Az-Zalzalah","The Earthquake"],
+  [100,"العاديات","Al-Aadiyaat","The Courser"],
+  [101,"القارعة","Al-Qaari'ah","The Calamity"],
+  [102,"التكاثر","At-Takaathur","The Rivalry in World Increase"],
+  [103,"العصر","Al-Asr","The Declining Day"],
+  [104,"الهمزة","Al-Humazah","The Slanderer"],
+  [105,"الفيل","Al-Fiil","The Elephant"],
+  [106,"قريش","Quraysh","Quraysh"],
+  [107,"الماعون","Al-Maa'uun","The Small Kindnesses"],
+  [108,"الكوثر","Al-Kawthar","The Abundance"],
+  [109,"الكافرون","Al-Kaafiruun","The Disbelievers"],
+  [110,"النصر","An-Nasr","The Divine Support"],
+  [111,"المسد","Al-Masad","The Palm Fiber"],
+  [112,"الإخلاص","Al-Ikhlaas","The Sincerity"],
+  [113,"الفلق","Al-Falaq","The Daybreak"],
+  [114,"الناس","An-Naas","Mankind"]
+
+];
+
+
+/*
+====================================================
+ELEMENTS
+====================================================
+*/
+
+const audio =
+  document.getElementById("audio");
+
+const playButton =
+  document.getElementById("playButton");
+
+const currentName =
+  document.getElementById("currentName");
+
+const currentArabic =
+  document.getElementById("currentArabic");
+
+const currentNumber =
+  document.getElementById("currentNumber");
+
+const status =
+  document.getElementById("status");
+
+const surahList =
+  document.getElementById("surahList");
+
+const search =
+  document.getElementById("search");
+
+const volume =
+  document.getElementById("volume");
+
+
+/*
+====================================================
+CURRENT SURAH
+====================================================
+*/
+
+let currentIndex = 32;
+
+
+/*
+====================================================
+AUDIO MAP
+====================================================
+
+Ammaaf Suuraa Al-Ahzaab qofa audio qaba.
+
+Yeroo audiowwan biroo dabalnu:
+
+33: "audio/Al-Ahzaab.m4a"
+
+fakkeenyaaf:
+
+1: "audio/Al-Faatihah.m4a"
+
+2: "audio/Al-Baqarah.m4a"
+
+kkf.
+
+====================================================
+*/
+
+const audioFiles = {
+
+  33: "audio/Stratus%20azaab.m4a"
+
+};
+
+
+/*
+====================================================
+DISPLAY SURAHS
+====================================================
+*/
+
+function renderSurahs(list = surahs){
+
+  surahList.innerHTML = "";
+
+  if(list.length === 0){
+
+    surahList.innerHTML = `
+      <div class="no-result">
+        ❌ Suuraan barbaadde hin argamne.
+      </div>
+    `;
+
+    return;
+  }
+
+
+  list.forEach((surah)=>{
+
+    const number = surah[0];
+    const arabic = surah[1];
+    const name = surah[2];
+    const meaning = surah[3];
+
+    const item =
+      document.createElement("div");
+
+    item.className = "surah";
+
+
+    const hasAudio =
+      Boolean(audioFiles[number]);
+
+
+    item.innerHTML = `
+
+      <div class="number">
+        ${number}
+      </div>
+
+      <div class="surah-info">
+
+        <strong>
+          ${name}
+        </strong>
+
+        <small>
+          ${meaning}
+          ${hasAudio ? " • 🎙️ Audio qaba" : ""}
+        </small>
+
+      </div>
+
+      <div class="arabic-name">
+        ${arabic}
+      </div>
+
+      <button
+        class="surah-play"
+        onclick="selectSurah(${number})">
+
+        ${hasAudio ? "▶" : "🔒"}
+
+      </button>
+
+    `;
+
+
+    surahList.appendChild(item);
+
+  });
+
+}
+
+
+/*
+====================================================
+SELECT SURAH
+====================================================
+*/
+
+function selectSurah(number){
+
+  const index =
+    surahs.findIndex(
+      s => s[0] === number
+    );
+
+  if(index === -1){
+    return;
+  }
+
+  currentIndex = index;
+
+  const surah =
+    surahs[index];
+
+
+  currentName.textContent =
+    "Suuraa " + surah[2];
+
+  currentArabic.textContent =
+    surah[1];
+
+  currentNumber.textContent =
+    "Suuraa " + surah[0];
+
+
+  /*
+    AUDIO EXISTS?
+  */
+
+  if(audioFiles[number]){
+
+    audio.src =
+      audioFiles[number];
+
+    audio.load();
+
+    status.textContent =
+      "🎙️ Sagalee Hafiz Jemal — " +
+      surah[2];
+
+    audio.play()
+      .then(()=>{
+
+        playButton.textContent = "⏸";
+
+      })
+      .catch(()=>{
+
+        playButton.textContent = "▶";
+
+      });
+
+  }else{
+
+    status.textContent =
+      "🎙️ Audio Suuraa kanaa amma hin dabalamin.";
+
+    playButton.textContent = "▶";
+
+  }
+
+}
+
+
+/*
+====================================================
+PLAY / PAUSE
+====================================================
+*/
+
+function togglePlay(){
+
+  const number =
+    surahs[currentIndex][0];
+
+
+  if(!audioFiles[number]){
+
+    status.textContent =
+      "⚠️ Audio Suuraa kanaa hin jiru.";
+
+    return;
+
+  }
+
+
+  if(audio.paused){
+
+    audio.play()
+      .then(()=>{
+
+        playButton.textContent = "⏸";
+
+      })
+      .catch(()=>{
+
+        status.textContent =
+          "Audio taphachuu hin dandeenye.";
+
+      });
+
+  }else{
+
+    audio.pause();
+
+    playButton.textContent = "▶";
+
+  }
+
+}
+
+
+/*
+====================================================
+PREVIOUS
+====================================================
+*/
+
+function previousSurah(){
+
+  if(currentIndex > 0){
+
+    selectSurah(
+      surahs[currentIndex - 1][0]
+    );
+
+  }
+
+}
+
+
+/*
+====================================================
+NEXT
+====================================================
+*/
+
+function nextSurah(){
+
+  if(currentIndex < surahs.length - 1){
+
+    selectSurah(
+      surahs[currentIndex + 1][0]
+    );
+
+  }
+
+}
+
+
+/*
+====================================================
+AUDIO EVENTS
+====================================================
+*/
+
+audio.addEventListener(
+  "play",
+  function(){
+
+    playButton.textContent = "⏸";
+
+  }
+);
+
+
+audio.addEventListener(
+  "pause",
+  function(){
+
+    playButton.textContent = "▶";
+
+  }
+);
+
+
+audio.addEventListener(
+  "ended",
+  function(){
+
+    playButton.textContent = "▶";
+
+    /*
+      Yoo audio Suuraa itti aanu jiraate
+      ofumaan itti darba.
+    */
+
+    nextSurah();
+
+  }
+);
+
+
+audio.addEventListener(
+  "error",
+  function(){
+
+    status.textContent =
+      "❌ Audio hin banamne. Maqaa fi bakka faayila ilaali.";
+
+  }
+);
+
+
+/*
+====================================================
+VOLUME
+====================================================
+*/
+
+volume.addEventListener(
+  "input",
+  function(){
+
+    audio.volume =
+      Number(this.value);
+
+  }
+);
+
+
+/*
+====================================================
+SEARCH
+====================================================
+*/
+
+search.addEventListener(
+  "input",
+  function(){
+
+    const query =
+      this.value
+        .toLowerCase()
+        .trim();
+
+
+    const results =
+      surahs.filter(
+        surah => {
+
+          const number =
+            String(surah[0]);
+
+          const arabic =
+            surah[1];
+
+          const name =
+            surah[2].toLowerCase();
+
+          const meaning =
+            surah[3].toLowerCase();
+
+
+          return (
+
+            name.includes(query)
+
+            ||
+
+            meaning.includes(query)
+
+            ||
+
+            arabic.includes(query)
+
+            ||
+
+            number === query
+
+          );
+
+        }
+      );
+
+
+    renderSurahs(results);
+
+  }
+);
+
+
+/*
+====================================================
+DARK MODE
+====================================================
+*/
+
+function toggleDark(){
+
+  document.body.classList.toggle("dark");
+
+
+  const enabled =
+    document.body.classList.contains("dark");
+
+
+  localStorage.setItem(
+    "quranDarkMode",
+    enabled ? "on" : "off"
+  );
+
+}
+
+
+/*
+====================================================
+RESTORE DARK MODE
+====================================================
+*/
+
+if(
+  localStorage.getItem(
+    "quranDarkMode"
+  ) === "on"
+){
+
+  document.body.classList.add("dark");
+
+}
+
+
+/*
+====================================================
+START APP
+====================================================
+*/
+
+renderSurahs();
+
+
+/*
+  App yeroo banamu
+  Al-Ahzaab filatamee jira.
+*/
+
+selectSurah(33);
+
+</script>
+
+</body>
+</html>
